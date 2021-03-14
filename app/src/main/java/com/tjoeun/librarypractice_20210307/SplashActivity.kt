@@ -1,7 +1,10 @@
 package com.tjoeun.librarypractice_20210307
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 
 class SplashActivity : BaseActivity() {
 
@@ -17,6 +20,18 @@ class SplashActivity : BaseActivity() {
     }
 
     override fun setValues() {
+
+//        3초 후에 메인화면으로.
+        val myHandler = Handler(Looper.getMainLooper())
+
+        myHandler.postDelayed({
+
+            val myIntent = Intent(mContext, MainActivity::class.java)
+            startActivity(myIntent)
+
+            finish()
+
+        }, 3000)
 
     }
 
